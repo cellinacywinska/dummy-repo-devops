@@ -1,19 +1,20 @@
 name: ephemeral-runners
-on: [push]
+on: workflow_dispatch
 jobs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: LorenzoDrudi/ephemeral-github-runner-action@v1
-        with:
-          provider: 'aws'
-          arch: 'arm64'
-          configPath: '../../config.yaml'
-          app_id: ${{ secrets.APP_ID }}
-          app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
-          pulumi_config_passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
-          pulumi_backend_url: ${{ secrets.PULUMI_BACKEND_URL }}
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: ${{ secrets.AWS_REGION }}
+    manage-runners:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: LorenzoDrudi/ephemeral-github-runner-action@v1
+            with:
+              provider: 'aws'
+              arch: 'arm64'
+              configPath: '../../config.yaml'
+              app_id: ${{ secrets.APP_ID }}
+              app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
+              pulumi_config_passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+              pulumi_backend_url: ${{ secrets.PULUMI_BACKEND_URL }}
+              aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+              aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              aws_region: ${{ secrets.AWS_REGION }}
           
 
