@@ -4,6 +4,7 @@ jobs:
     manage-runners:
         runs-on: ubuntu-latest
         steps:
+          - uses: actions/checkout@v2
           - uses: LorenzoDrudi/ephemeral-github-runners-docker-action@v1
             with:
               provider: 'aws'
