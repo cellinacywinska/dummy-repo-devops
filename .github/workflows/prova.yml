@@ -1,0 +1,11 @@
+on: [push, pull_request]
+
+jobs:
+  examplejob:
+    runs-on: ubuntu-latest
+    name: Get Stars and License
+    steps:
+    - uses: actions/checkout@v2
+    - uses: italia/docker-action-template@v1
+      with:
+        repo: "italia/publiccode-parser-action"
