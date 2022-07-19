@@ -4,7 +4,7 @@ jobs:
     manage-runners:
         runs-on: ubuntu-latest
         steps:
-          - uses: LorenzoDrudi/ephemeral-github-runner-action@v1
+          - uses: LorenzoDrudi/ephemeral-github-runners-docker-action@v1
             with:
               provider: 'aws'
               arch: 'arm64'
