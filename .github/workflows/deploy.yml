@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
-          - uses: cellinacywinska/runners-github-action-attempt@develop
+          - uses:  LorenzoDrudi/ephemeral-github-runner-action@v1
             with:
               pulumi-config-path: '../../config.yaml'
               pulumi-goal: 'create'
@@ -13,6 +13,7 @@ jobs:
               pulumi-cloud-provider: 'aws'
               pulumi-config-passphrase: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
               cloud-architecture: 'arm64'
+              pulumi-backend-url: ${{ secrets.PULUMI_BACKEND_URL }}
               github-app-id: ${{ secrets.APP_ID }}
               github-app-private-key: ${{ secrets.APP_PRIVATE_KEY }}
               aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
