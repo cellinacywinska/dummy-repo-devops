@@ -4,7 +4,7 @@ jobs:
     manage-runners:
         runs-on: ubuntu-latest
         steps:
-          - uses: cellinacywinska/runners-github-action-attempt@develop
+          - uses: LorenzoDrudi/ephemeral-github-runner-action@v1
             with:
               pulumi-config-path: '../../config.yaml'
               pulumi-goal: 'create'
