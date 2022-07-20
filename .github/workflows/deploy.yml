@@ -4,11 +4,6 @@ jobs:
     manage-runners:
         runs-on: ubuntu-latest
         steps:
-          - name: Setup tmate session
-            if: always()
-            uses: mxschmitt/action-tmate@v3
-            env:
-                GITHUB_CONTEXT: ${{ toJSON(github) }}
           - uses: LorenzoDrudi/ephemeral-github-runner-action@v1
             with:
               pulumi-config-path: '../../config.yaml'
