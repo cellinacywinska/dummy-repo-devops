@@ -20,7 +20,7 @@ jobs:
               pulumi-config-path: 'config.yaml'
               pulumi-goal: 'create'
               pulumi-stack-name: 'dev6'
-              pulumi-cloud-provider: 'a'
+              pulumi-cloud-provider: 'aws'
               cloud-architecture: 'arm64'
               github-access-token: ${{ secrets.ACCESS_TOKEN }}
               pulumi-backend-url: ${{ secrets.PULUMI_BACKEND_URL }}
